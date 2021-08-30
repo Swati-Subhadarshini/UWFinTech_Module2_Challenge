@@ -13,6 +13,7 @@ import questionary
 from pathlib import Path
 
 from qualifier.utils.fileio import load_csv
+from qualifier.utils.save_csv import save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -104,12 +105,44 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     return bank_data_filtered
 
 
+def save_csv(csvpath, qualifying_loans):
+
+    """Helper functions to save data to CSV file.
+
+    This contains a helper function for write data into the CSV files.
+
+    """
+
+    """writes the data into CSV file.
+
+    Args:
+        csvpath (Path): The csv file path.
+        qualifying loan list."""
+
+    
+    print("Saving the qualifying loan datas into the csv file")
+
+    header = ['Lender', 'Loan_Amount', 'LTV', 'DTI', 'Credit_Score', 'Interest_Rate']
+    with open(csvpath, 'w', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+
+        # Write our header row first!
+        csvwriter.writerow(header)
+
+        # Then we can write the data rows
+        for row in qualifying_loans:
+            csvwriter.writerow(row)
+
+
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
 
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
+    
+    return: csvpath
     """
+
     # @TODO: Complete the usability dialog for savings the CSV Files.
     if len(qualifying_loans) > 0:
         save_qualifying_loan_data = questionary.text("Would you like to save the qualifying loans?").ask()
@@ -118,23 +151,7 @@ def save_qualifying_loans(qualifying_loans):
             csvpath = Path(csv_path)
             if not csvpath.exists():
                 sys.exit(f"Oops! Can't find this path: {csvpath}")
-
-            print("Saving the qualifying loan datas into the csv file")
-    #csvpath = Path("qualifying_loans.csv")
-
-            header = ['Lender', 'Loan_Amount', 'LTV', 'DTI', 'Credit_Score', 'Interest_Rate']
-            with open(csvpath, 'w', newline='') as csvfile:
-                csvwriter = csv.writer(csvfile)
-
-    # Write our header row first!
-    
-                csvwriter.writerow(header)
-
-        # Then we can write the data rows
-                for row in qualifying_loans:
-                    csvwriter.writerow(row)
-    else:
-        sys.exit("No qualifying loan available")
+    return csvpath
 
 def run():
     """The main function for running the script."""
@@ -151,7 +168,9 @@ def run():
     )
 
     # Save qualifying loans
-    save_qualifying_loans(qualifying_loans)
+    csv_file_path = save_qualifying_loans(qualifying_loans)
+
+    save_csv(csv_file_path, qualifying_loans)
 
 
 if __name__ == "__main__":
