@@ -1,50 +1,50 @@
-   96  cd ..
-   97  ls
-   98  git add app.py
-   99  git add app.py
-  100  git status
-  101  ls
-  102  git add qualifying_loan.csv
-  103  git add qualifying_loans.csv
-  104  git add qualifying_loans.csv
-  105  git status
-  106  ls
-  107  git add README.md
-  108  git add README.md
-  109  git status
-  110  git commit -m "Edited and add.py, READM, Data folder, Qualifier Folder, Terminal History text file."
-  111  git push
-  112  ls
-  113  python app.py
-  114  python app.py
-  115  ls
-  116  git add app.py
-  117  git add app.py
-  118  git add README.md
-  119  git add qualifying_loans.csv
-  120  git add qualifying.csv
-  121  git add qualifying_loans.csv
-  122  cd data
-  123  ls
-  124  git add daily_rate_sheet.csv
-  125  cd ..
-  126  cd qualifier
-  127  ls
-  128  cd utils
-  129  ls
-  130  git add calculators.py
-  131  git add fileio.py
-  132  cd ..
-  133  cd ..
-  134  git status
-  135  git commit -m "edited and added files"
-  136  git push
-  137  git pull
-  138  git status
-  139  git add app.py
-  140  git README.md
-  141  git add README.md
-  142  git status
-  143  git commit -m "added and edited app.py and README files"
-  144  history 50 > terminal.txt
-  145  history 50 > terminal_history.txt
+    2  git config --global user.name
+    3  git config user.name "Swati44"
+    4  git config user.name "Swati Subhadarshini"
+    5  git config user.name "Swati Subhadarshini"
+    6  git init
+    7  git config user.name "Swati44"
+    8  git config user.name
+    9  conda activate dev
+   10  cd Desktop
+   11  ls
+   12  cd UWFinTech_Module2_Challenge
+   13  git pull
+   14  ls
+   15  python app.py
+   16  pip install fire
+   17  pip install questionary
+   18  python app.py
+   19  python app.py
+   20  python app.py
+   21  python app.py
+   22  python app.py
+   23  git status
+   24  git add app.py
+   25  git add app.py
+   26  ls
+   27  cd data
+   28  ls
+   29  cd ..
+   30  cd qualifier
+   31  ls
+   32  cd utils
+   33  ls
+   34  git add save_csv_file.py
+   35  git add save_csv_file.py
+   36  git add save_qualifying_loans.py
+   37  git add save_qualifying_loans.py
+   38  git status
+   39  cd ..
+   40  ls
+   41  cd ..
+   42  ls
+   43  git add qualifying_loans.csv
+   44  git add qualifying_loans.csv
+   45  git status
+   46  git add README.md
+   47  git add READMe.md
+   48  git status
+   49  git terminal_history > https://www.linkedin.com/in/swati-subhadarshini-89a8a538?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhUCLlUYCSc2jK4x4khPVUQ%3D%3D
+   50  git terminal_history > 50
+   51  history 50 > terminal_history.txt
